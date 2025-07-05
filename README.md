@@ -91,6 +91,15 @@ This class provides these main calculations;
 5. Prediction of color
 6. Returning the prediction is true or false
 
+## Contact
+
+If you have any questions or suggestions, feel free to contact us:
+
+- **Email:** Harshitjain3075@gmail.com
+---
+
+Thank you !!
+
 
 
 I think, the training data has a huge important in classification accuracy. I created my training data carefully but maybe the accuracy can be higher with more suitable training data.
