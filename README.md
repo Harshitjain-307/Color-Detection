@@ -71,19 +71,6 @@ K nearest neighbors is a simple algorithm that stores all available cases and cl
 
 [OpenCV](https://pypi.python.org/pypi/opencv-python) was used for color histogram calculations and knn classifier. [NumPy](https://stackoverflow.com/questions/29499815/how-to-install-numpy-on-windows-using-pip-install) was used for matrix/n-dimensional array calculations. The program was developed on Python at Linux environment.
 
-In the “[src](https://github.com/ahmetozlu/color_recognition/tree/master/src)” folder, there are 2 Python classes which are:
-
-- **[color_classification_webcam.py](https://github.com/ahmetozlu/color_recognition/blob/master/src/color_classification_webcam.py):** test class to perform real-time color recognition form webcam stream.
-
-- **[color_classification_image.py](https://github.com/ahmetozlu/color_recognition/blob/master/src/color_classification_image.py):** test class to perform color recognition on a single image.
-
-In the “[color_recognition_api](https://github.com/ahmetozlu/color_recognition/tree/master/src/color_recognition_api)” folder, there are 2 Python classes which are:
-
-- **[feature_extraction.py](https://github.com/ahmetozlu/color_recognition/blob/master/src/color_recognition_api/color_histogram_feature_extraction.py):** feature extraction operation class
-
-- **[knn_classifier.py](https://github.com/ahmetozlu/color_recognition/blob/master/src/color_recognition_api/knn_classifier.py):** knn classification class
-
-**1.) Explanation of “[feature_extraction.py](https://github.com/ahmetozlu/color_recognition/blob/master/src/color_recognition_api/color_histogram_feature_extraction.py)"**
 
 I can get the RGB color histogram of images by this Python class. For example, plot of RGB color histogram for one of the red images is given at the below.
 
@@ -93,9 +80,7 @@ I can get the RGB color histogram of images by this Python class. For example, p
 
 I decided to use bin number of histogram which has the peak value of pixel count for R, G and B as feature so I can get the dominant R, G and B values to create feature vectors for training. For example, the dominant R, G and B values of the red image which is given at above is [254, 0, 2].
 
-I get the dominant R, G, B values by using Color Histogram for each training image then I labelled them because KNN classifier is a supervised learner and I deploy these feature vectors in the csv file. Thus, I create my training feature vector dataset. It can be found in the file which name’s is [training.data](https://github.com/ahmetozlu/color_recognition/blob/master/src/training.data) under src folder.
-
-**2.) Explanation of “[knn_classifier.py](https://github.com/ahmetozlu/color_recognition/blob/master/src/color_recognition_api/knn_classifier.py)”**
+I get the dominant R, G, B values by using Color Histogram for each training image then I labelled them because KNN classifier is a supervised learner and I deploy these feature vectors in the csv file. Thus, I create my training feature vector dataset. 
 
 This class provides these main calculations;
 
@@ -106,33 +91,10 @@ This class provides these main calculations;
 5. Prediction of color
 6. Returning the prediction is true or false
 
-**“[color_classification_webcam.py](https://github.com/ahmetozlu/color_recognition/blob/master/src/color_classification_webcam.py)”** is the main class of my program, it provides;
 
-1. Calling [feature_extraction.py](https://github.com/ahmetozlu/color_recognition/blob/master/src/color_recognition_api/color_histogram_feature_extraction.py) to create training data by feature extraction
-2. Calling [knn_classifier.py](https://github.com/ahmetozlu/color_recognition/blob/master/src/color_recognition_api/knn_classifier.py) for classification
-
-You can find training data in [here](https://github.com/ahmetozlu/color_classifier/tree/master/src/training_dataset).
-
-You can find features are got from training data in [here](https://raw.githubusercontent.com/ahmetozlu/color_classifier/master/src/training.data).
-
-## Conclusion
 
 I think, the training data has a huge important in classification accuracy. I created my training data carefully but maybe the accuracy can be higher with more suitable training data.
 
 Another important thing is lightning and shadows. In my test images, the images which were taken under bad lighting conditions and with shadows are classified wrong (false positives), maybe some filtering algorithm should/can be implemented before the test images send to KNN classifier Thus, accuracy can be improved.
 
-## Citation
-If you use this code for your publications, please cite it as:
 
-    @ONLINE{cr,
-        author = "Ahmet Özlü",
-        title  = "Color Recognition",
-        year   = "2018",
-        url    = "https://github.com/ahmetozlu/color_recognition"
-    }
-
-## Author
-Ahmet Özlü
-
-## License
-This system is available under the MIT license. See the LICENSE file for more info.
