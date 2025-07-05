@@ -91,6 +91,11 @@ This class provides these main calculations;
 5. Prediction of color
 6. Returning the prediction is true or false
 
+I think, the training data has a huge important in classification accuracy. I created my training data carefully but maybe the accuracy can be higher with more suitable training data.
+
+Another important thing is lightning and shadows. In my test images, the images which were taken under bad lighting conditions and with shadows are classified wrong (false positives), maybe some filtering algorithm should/can be implemented before the test images send to KNN classifier Thus, accuracy can be improved.
+
+
 ## Contact
 
 If you have any questions or suggestions, feel free to contact us:
@@ -100,10 +105,5 @@ If you have any questions or suggestions, feel free to contact us:
 
 Thank you !!
 
-
-
-I think, the training data has a huge important in classification accuracy. I created my training data carefully but maybe the accuracy can be higher with more suitable training data.
-
-Another important thing is lightning and shadows. In my test images, the images which were taken under bad lighting conditions and with shadows are classified wrong (false positives), maybe some filtering algorithm should/can be implemented before the test images send to KNN classifier Thus, accuracy can be improved.
 
 
